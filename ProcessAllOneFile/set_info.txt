@@ -1,0 +1,33 @@
+﻿
+"name": "Planechase",    
+"code": "HOP",    
+"oldCode": "PCH",    
+"magicCardsInfoCode": "pch",    
+"releaseDate": "2009-09-04",    
+"border": "black",    
+"type": "planechase",    
+"mkm_name": "Planechase",    
+"mkm_id": 113,      
+"magicRaritiesCodes": [      ""    ],   
+"onlineOnly": true,
+
+"translations": {       "jp": "Portal Three Kingdoms", "cn": "Portal Three Kingdoms"    },
+"translations": { "de": "Portal", "fr": "Portal", "es": "Portal"    },
+"booster": [      
+ [    "rare",  "mythic rare"  ],      
+ "uncommon",      
+ "uncommon",      
+ "uncommon",
+      "common",
+      "common",
+        "common",
+       "common",
+      "common",
+      "common",
+      "common",
+         "common",      
+ "common",      
+ "common",
+ [      "power nine",
+        "foil"     ]    ]
+
