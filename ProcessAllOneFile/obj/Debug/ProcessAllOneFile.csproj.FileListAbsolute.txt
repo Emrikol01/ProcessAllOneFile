@@ -1,0 +1,12 @@
+D:\projects\MTG\MTGJSON.com\AllOneFile\ProcessAllOneFile\ProcessAllOneFile\bin\Debug\ProcessAllOneFile.exe.config
+D:\projects\MTG\MTGJSON.com\AllOneFile\ProcessAllOneFile\ProcessAllOneFile\bin\Debug\ProcessAllOneFile.exe
+D:\projects\MTG\MTGJSON.com\AllOneFile\ProcessAllOneFile\ProcessAllOneFile\bin\Debug\ProcessAllOneFile.pdb
+D:\projects\MTG\MTGJSON.com\AllOneFile\ProcessAllOneFile\ProcessAllOneFile\bin\Debug\Newtonsoft.Json.dll
+D:\projects\MTG\MTGJSON.com\AllOneFile\ProcessAllOneFile\ProcessAllOneFile\bin\Debug\Newtonsoft.Json.xml
+D:\projects\MTG\MTGJSON.com\AllOneFile\ProcessAllOneFile\ProcessAllOneFile\obj\Debug\ProcessAllOneFile.csprojResolveAssemblyReference.cache
+D:\projects\MTG\MTGJSON.com\AllOneFile\ProcessAllOneFile\ProcessAllOneFile\obj\Debug\ProcessAllOneFile.exe
+D:\projects\MTG\MTGJSON.com\AllOneFile\ProcessAllOneFile\ProcessAllOneFile\obj\Debug\ProcessAllOneFile.pdb
+D:\projects\MTG\MTGJSON.com\AllOneFile\ProcessAllOneFile\ProcessAllOneFile\bin\Debug\EntityFramework.dll
+D:\projects\MTG\MTGJSON.com\AllOneFile\ProcessAllOneFile\ProcessAllOneFile\bin\Debug\EntityFramework.SqlServer.dll
+D:\projects\MTG\MTGJSON.com\AllOneFile\ProcessAllOneFile\ProcessAllOneFile\bin\Debug\EntityFramework.xml
+D:\projects\MTG\MTGJSON.com\AllOneFile\ProcessAllOneFile\ProcessAllOneFile\bin\Debug\EntityFramework.SqlServer.xml
