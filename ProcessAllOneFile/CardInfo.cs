@@ -25,8 +25,12 @@ namespace MTGProcessAllOneFile
         public string type { get; set; }
         //public List<string> booster { get; set; }
         public string mkm_name { get; set; }
-        public int mkm_id { get; set; }
-
+        public string mkm_id { get; set; }
+        public string oldCode { get; set; }
+        public string magicRaritiesCodes { get; set; }
+        public string onlineOnly { get; set; }
+        public string translations { get; set; }
+        public string booster { get; set; }
         //public List<Card> cards { get; set; }
         public virtual ICollection<Cards> cards { get; set; }
 
