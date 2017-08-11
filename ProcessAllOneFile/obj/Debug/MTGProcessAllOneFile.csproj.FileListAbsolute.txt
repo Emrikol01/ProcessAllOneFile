@@ -12,3 +12,6 @@ D:\projects\MTG\MTGJSON.com\AllOneFile\ProcessAllOneFile\ProcessAllOneFile\obj\D
 D:\projects\MTG\MTGJSON.com\AllOneFile\ProcessAllOneFile\ProcessAllOneFile\obj\Debug\ProcessAllOneFile.pdb
 D:\projects\MTG\MTGJSON.com\AllOneFile\ProcessAllOneFile\ProcessAllOneFile\obj\Debug\ProcessAllOneFile.Migrations.Initial.resources
 D:\projects\MTG\MTGJSON.com\AllOneFile\ProcessAllOneFile\ProcessAllOneFile\obj\Debug\MTGProcessAllOneFile.csproj.GenerateResource.Cache
+C:\projects\github\ProcessAllOneFile\ProcessAllOneFile\bin\Debug\ProcessAllOneFile.exe.config
+C:\projects\github\ProcessAllOneFile\ProcessAllOneFile\obj\Debug\ProcessAllOneFile.exe
+C:\projects\github\ProcessAllOneFile\ProcessAllOneFile\obj\Debug\ProcessAllOneFile.pdb
