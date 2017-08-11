@@ -15,3 +15,14 @@ D:\projects\MTG\MTGJSON.com\AllOneFile\ProcessAllOneFile\ProcessAllOneFile\obj\D
 C:\projects\github\ProcessAllOneFile\ProcessAllOneFile\bin\Debug\ProcessAllOneFile.exe.config
 C:\projects\github\ProcessAllOneFile\ProcessAllOneFile\obj\Debug\ProcessAllOneFile.exe
 C:\projects\github\ProcessAllOneFile\ProcessAllOneFile\obj\Debug\ProcessAllOneFile.pdb
+C:\projects\github\ProcessAllOneFile\ProcessAllOneFile\bin\Debug\ProcessAllOneFile.exe
+C:\projects\github\ProcessAllOneFile\ProcessAllOneFile\bin\Debug\ProcessAllOneFile.pdb
+C:\projects\github\ProcessAllOneFile\ProcessAllOneFile\bin\Debug\EntityFramework.dll
+C:\projects\github\ProcessAllOneFile\ProcessAllOneFile\bin\Debug\EntityFramework.SqlServer.dll
+C:\projects\github\ProcessAllOneFile\ProcessAllOneFile\bin\Debug\Newtonsoft.Json.dll
+C:\projects\github\ProcessAllOneFile\ProcessAllOneFile\bin\Debug\EntityFramework.xml
+C:\projects\github\ProcessAllOneFile\ProcessAllOneFile\bin\Debug\EntityFramework.SqlServer.xml
+C:\projects\github\ProcessAllOneFile\ProcessAllOneFile\bin\Debug\Newtonsoft.Json.xml
+C:\projects\github\ProcessAllOneFile\ProcessAllOneFile\obj\Debug\MTGProcessAllOneFile.csprojResolveAssemblyReference.cache
+C:\projects\github\ProcessAllOneFile\ProcessAllOneFile\obj\Debug\ProcessAllOneFile.Migrations.Initial.resources
+C:\projects\github\ProcessAllOneFile\ProcessAllOneFile\obj\Debug\MTGProcessAllOneFile.csproj.GenerateResource.Cache

@@ -13,6 +13,8 @@ namespace MTGProcessAllOneFile
     {
         static void Main(string[] args)
         {
+            // hello nogi test test
+
             string json;
             using (StreamReader file = File.OpenText(@"D:\projects\MTG\MTGJSON.com\AllOneFile\AllSets-x.json"))
             {
