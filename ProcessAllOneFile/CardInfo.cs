@@ -32,7 +32,7 @@ namespace MTGProcessAllOneFile
         public string translations { get; set; }
         public string booster { get; set; }
         //public List<Card> cards { get; set; }
-        public virtual ICollection<Cards> cards { get; set; }
+        public virtual ICollection<Card> cards { get; set; }
 
 
         //JToken jtCode = setInfo.SelectToken("code");
@@ -49,7 +49,7 @@ namespace MTGProcessAllOneFile
     }
 
     //
-    public class Cards
+    public class Card
     {
         // primary key
         [Key]
@@ -59,7 +59,7 @@ namespace MTGProcessAllOneFile
         public int SetId { get; set; }
         public virtual Set set { get; set; }
         public string artist { get; set; }
-        public decimal cmc { get; set; }
+        public string cmc { get; set; }
         public string flavor { get; set; }
         public string id { get; set; }
         public string imageName { get; set; }
@@ -67,7 +67,7 @@ namespace MTGProcessAllOneFile
         public string manaCost { get; set; }
         public string mciNumber { get; set; }
         [Required]
-        public int multiverseid { get; set; }
+        public string multiverseid { get; set; }
         public string name { get; set; }
         public string number { get; set; }
         public string originalText { get; set; }
@@ -80,29 +80,29 @@ namespace MTGProcessAllOneFile
 
         // foreign key references
         //public List<string> colorIdentity { get; set; }
-        public virtual ICollection<CardColorIdentities> cardColorIdentities { get; set; }
+        public virtual ICollection<CardColorIdentity> cardColorIdentities { get; set; }
         //public List<string> colors { get; set; }
-        public virtual ICollection<CardColors> cardColors { get; set; }
+        public virtual ICollection<CardColor> cardColors { get; set; }
         //public List<Legality> legalities { get; set; }
-        public virtual ICollection<CardLegalities> cardLegalities { get; set; }
+        public virtual ICollection<CardLegality> cardLegalities { get; set; }
         //
         //public List<string> types { get; set; }
-        public virtual ICollection<CardTypes> cardTypes{ get; set; }
+        public virtual ICollection<CardType> cardTypes{ get; set; }
         //public List<string> subtypes { get; set; }
-        public virtual ICollection<CardSubTypes> cardSubTypes { get; set; }
+        public virtual ICollection<CardSubType> cardSubTypes { get; set; }
         //public List<string> printings { get; set; }
-        public virtual ICollection<CardPrintings> cardPrintings { get; set; }
+        public virtual ICollection<CardPrinting> cardPrintings { get; set; }
         //public List<ForeignNames> foreignNames { get; set; }
-        public virtual ICollection<ForeignNames> foreignNames { get; set; }
+        public virtual ICollection<ForeignName> foreignName { get; set; }
     }
-    public class CardList : List<Cards>
+    public class CardList : List<Card>
     {
         //public Card[] CARDS { get; set; }
     }
 
 
     //
-    public class Legalities
+    public class Legality
     {
         [Key]
         [Required]
@@ -110,9 +110,9 @@ namespace MTGProcessAllOneFile
         public string format { get; set; }
         public string legality { get; set; }
 
-        public virtual ICollection<CardLegalities> CardLegalities { get; set; }
+        public virtual ICollection<CardLegality> CardLegalities { get; set; }
     }
-    public class CardLegalities
+    public class CardLegality
     {
         [Key]
         [Required]
@@ -120,22 +120,22 @@ namespace MTGProcessAllOneFile
         public int CardId { get; set; }
         public int LegalityId { get; set; }
 
-        public virtual Legalities Legality { get; set; }
-        public virtual Cards Cards { get; set; }
+        public virtual Legality Legality { get; set; }
+        public virtual Card Cards { get; set; }
     }
 
 
     //
-    public class Colors
+    public class Color
     {
         [Key]
         [Required]
         public int ColorId { get; set; }
-        public string Color { get; set; }
+        public string ColorName { get; set; }
 
-        public virtual ICollection<CardColors> CardColors { get; set; }
+        public virtual ICollection<CardColor> CardColors { get; set; }
     }
-    public class CardColors
+    public class CardColor
     {
         [Key]
         [Required]
@@ -145,21 +145,21 @@ namespace MTGProcessAllOneFile
 
         public int ColorId { get; set; }
 
-        public virtual Colors Colors { get; set; }
-        public virtual Cards Cards { get; set; }
+        public virtual Color Colors { get; set; }
+        public virtual Card Cards { get; set; }
     }
 
 
     //
-    public class ColorIdentities
+    public class ColorIdentity
     {
         [Key]
         [Required]
         public int ColorIdentityId { get; set; }
-        public string ColorIdentity { get; set; }
-        public virtual ICollection<CardColorIdentities> CardColorIdentities { get; set; }
+        public string ColorIdentityName { get; set; }
+        public virtual ICollection<CardColorIdentity> CardColorIdentities { get; set; }
     }
-    public class CardColorIdentities
+    public class CardColorIdentity
     {
         [Key]
         [Required]
@@ -167,47 +167,48 @@ namespace MTGProcessAllOneFile
         public int ColorIdentityId { get; set; }
         public int CardId { get; set; }
 
-        public virtual ColorIdentities ColorIdentities { get; set; }
-        public virtual Cards Cards { get; set; }
+        public virtual ColorIdentity ColorIdentities { get; set; }
+        public virtual Card Cards { get; set; }
     }
 
 
     //
-    public class ForeignNames
+    public class ForeignName
     {
         [Key]
         [Required]
-        public int ForeignNamesId { get; set; }
+        public int ForeignNameId { get; set; }
+        public int CardId { get; set; }
         public string language { get; set; }
         public string name { get; set; }
         public int multiverseid { get; set; }
-
-        public virtual ICollection<CardForeignNames> CardForeignNames { get; set; }
+        public virtual Card Cards { get; set; }
+        //public virtual ICollection<CardForeignName> CardForeignNames { get; set; }
     }
-    public class CardForeignNames
-    {
-        [Key]
-        [Required]
-        public int CardForeignNamesId { get; set; }
-        public int ForeignNamesId { get; set; }
-        public int CardId { get; set; }
+    //public class CardForeignName
+    //{
+    //    [Key]
+    //    [Required]
+    //    public int CardForeignNamesId { get; set; }
+    //    public int ForeignNamesId { get; set; }
+    //    public int CardId { get; set; }
 
-        public virtual ForeignNames ForeignNames { get; set; }
-        public virtual Cards Cards { get; set; }
-    }
+    //    public virtual ForeignName ForeignNames { get; set; }
+    //    public virtual Card Cards { get; set; }
+    //}
 
 
     //
-    public class Printings
+    public class Printing
     {
         [Key]
         [Required]
         public int PrintingsId { get; set; }
-        public string Printing { get; set; }
+        public string PrintingName { get; set; }
 
-        public virtual ICollection<CardPrintings> CardPrintings { get; set; }
+        public virtual ICollection<CardPrinting> CardPrintings { get; set; }
     }
-    public class CardPrintings
+    public class CardPrinting
     {
         [Key]
         [Required]
@@ -215,21 +216,21 @@ namespace MTGProcessAllOneFile
         public int PrintingsId { get; set; }
         public int CardId { get; set; }
 
-        public virtual Printings Printings { get; set; }
-        public virtual Cards Cards { get; set; }
+        public virtual Printing Printings { get; set; }
+        public virtual Card Cards { get; set; }
     }
 
 
     //
-    public class Types
+    public class Type
     {
         [Key]
         [Required]
         public int TypesId { get; set; }
-        public string Type { get; set; }
-        public virtual ICollection<CardTypes> CardTypes { get; set; }
+        public string TypeName { get; set; }
+        public virtual ICollection<CardType> CardTypes { get; set; }
     }
-    public class CardTypes
+    public class CardType
     {
         [Key]
         [Required]
@@ -237,21 +238,21 @@ namespace MTGProcessAllOneFile
         public int TypesId { get; set; }
         public int CardId { get; set; }
 
-        public virtual Types Types { get; set; }
-        public virtual Cards Cards { get; set; }
+        public virtual Type Types { get; set; }
+        public virtual Card Cards { get; set; }
     }
 
 
     //
-    public class SubTypes
+    public class SubType
     {
         [Key]
         [Required]
         public int SubTypesId { get; set; }
-        public string SubType { get; set; }
-        public virtual ICollection<CardSubTypes> CardSubTypes { get; set; }
+        public string SubTypeName { get; set; }
+        public virtual ICollection<CardSubType> CardSubTypes { get; set; }
     }
-    public class CardSubTypes
+    public class CardSubType
     {
         [Key]
         [Required]
@@ -259,8 +260,8 @@ namespace MTGProcessAllOneFile
         public int SubTypesId { get; set; }
         public int CardId { get; set; }
 
-        public virtual SubTypes SubTypes { get; set; }
-        public virtual Cards Cards { get; set; }
+        public virtual SubType SubTypes { get; set; }
+        public virtual Card Cards { get; set; }
     }
 
 

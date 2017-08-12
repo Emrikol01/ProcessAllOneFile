@@ -36,14 +36,14 @@ namespace ProcessAllOneFile.Migrations
                         CardId = c.Int(nullable: false, identity: true),
                         SetId = c.Int(nullable: false),
                         artist = c.String(),
-                        cmc = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        cmc = c.String(),
                         flavor = c.String(),
                         id = c.String(),
                         imageName = c.String(),
                         layout = c.String(),
                         manaCost = c.String(),
                         mciNumber = c.String(),
-                        multiverseid = c.Int(nullable: false),
+                        multiverseid = c.String(nullable: false),
                         name = c.String(),
                         number = c.String(),
                         originalText = c.String(),
@@ -77,7 +77,7 @@ namespace ProcessAllOneFile.Migrations
                 c => new
                     {
                         ColorId = c.Int(nullable: false, identity: true),
-                        Color = c.String(),
+                        ColorName = c.String(),
                     })
                 .PrimaryKey(t => t.ColorId);
             
@@ -124,7 +124,7 @@ namespace ProcessAllOneFile.Migrations
                 c => new
                     {
                         PrintingsId = c.Int(nullable: false, identity: true),
-                        Printing = c.String(),
+                        PrintingName = c.String(),
                     })
                 .PrimaryKey(t => t.PrintingsId);
             
@@ -147,7 +147,7 @@ namespace ProcessAllOneFile.Migrations
                 c => new
                     {
                         SubTypesId = c.Int(nullable: false, identity: true),
-                        SubType = c.String(),
+                        SubTypeName = c.String(),
                     })
                 .PrimaryKey(t => t.SubTypesId);
             
@@ -170,7 +170,7 @@ namespace ProcessAllOneFile.Migrations
                 c => new
                     {
                         TypesId = c.Int(nullable: false, identity: true),
-                        Type = c.String(),
+                        TypeName = c.String(),
                     })
                 .PrimaryKey(t => t.TypesId);
             
@@ -178,28 +178,14 @@ namespace ProcessAllOneFile.Migrations
                 "dbo.ForeignNames",
                 c => new
                     {
-                        ForeignNamesId = c.Int(nullable: false, identity: true),
+                        ForeignNameId = c.Int(nullable: false, identity: true),
+                        CardId = c.Int(nullable: false),
                         language = c.String(),
                         name = c.String(),
                         multiverseid = c.Int(nullable: false),
-                        Cards_CardId = c.Int(),
                     })
-                .PrimaryKey(t => t.ForeignNamesId)
-                .ForeignKey("dbo.Cards", t => t.Cards_CardId)
-                .Index(t => t.Cards_CardId);
-            
-            CreateTable(
-                "dbo.CardForeignNames",
-                c => new
-                    {
-                        CardForeignNamesId = c.Int(nullable: false, identity: true),
-                        ForeignNamesId = c.Int(nullable: false),
-                        CardId = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => t.CardForeignNamesId)
+                .PrimaryKey(t => t.ForeignNameId)
                 .ForeignKey("dbo.Cards", t => t.CardId, cascadeDelete: true)
-                .ForeignKey("dbo.ForeignNames", t => t.ForeignNamesId, cascadeDelete: true)
-                .Index(t => t.ForeignNamesId)
                 .Index(t => t.CardId);
             
             CreateTable(
@@ -214,7 +200,12 @@ namespace ProcessAllOneFile.Migrations
                         border = c.String(),
                         type = c.String(),
                         mkm_name = c.String(),
-                        mkm_id = c.Int(nullable: false),
+                        mkm_id = c.String(),
+                        oldCode = c.String(),
+                        magicRaritiesCodes = c.String(),
+                        onlineOnly = c.String(),
+                        translations = c.String(),
+                        booster = c.String(),
                     })
                 .PrimaryKey(t => t.SetId);
             
@@ -223,7 +214,7 @@ namespace ProcessAllOneFile.Migrations
                 c => new
                     {
                         ColorIdentityId = c.Int(nullable: false, identity: true),
-                        ColorIdentity = c.String(),
+                        ColorIdentityName = c.String(),
                     })
                 .PrimaryKey(t => t.ColorIdentityId);
             
@@ -233,9 +224,7 @@ namespace ProcessAllOneFile.Migrations
         {
             DropForeignKey("dbo.CardColorIdentities", "ColorIdentityId", "dbo.ColorIdentities");
             DropForeignKey("dbo.Cards", "SetId", "dbo.Sets");
-            DropForeignKey("dbo.ForeignNames", "Cards_CardId", "dbo.Cards");
-            DropForeignKey("dbo.CardForeignNames", "ForeignNamesId", "dbo.ForeignNames");
-            DropForeignKey("dbo.CardForeignNames", "CardId", "dbo.Cards");
+            DropForeignKey("dbo.ForeignNames", "CardId", "dbo.Cards");
             DropForeignKey("dbo.CardTypes", "TypesId", "dbo.Types");
             DropForeignKey("dbo.CardTypes", "CardId", "dbo.Cards");
             DropForeignKey("dbo.CardSubTypes", "SubTypesId", "dbo.SubTypes");
@@ -247,9 +236,7 @@ namespace ProcessAllOneFile.Migrations
             DropForeignKey("dbo.CardColors", "ColorId", "dbo.Colors");
             DropForeignKey("dbo.CardColors", "CardId", "dbo.Cards");
             DropForeignKey("dbo.CardColorIdentities", "CardId", "dbo.Cards");
-            DropIndex("dbo.CardForeignNames", new[] { "CardId" });
-            DropIndex("dbo.CardForeignNames", new[] { "ForeignNamesId" });
-            DropIndex("dbo.ForeignNames", new[] { "Cards_CardId" });
+            DropIndex("dbo.ForeignNames", new[] { "CardId" });
             DropIndex("dbo.CardTypes", new[] { "CardId" });
             DropIndex("dbo.CardTypes", new[] { "TypesId" });
             DropIndex("dbo.CardSubTypes", new[] { "CardId" });
@@ -265,7 +252,6 @@ namespace ProcessAllOneFile.Migrations
             DropIndex("dbo.CardColorIdentities", new[] { "ColorIdentityId" });
             DropTable("dbo.ColorIdentities");
             DropTable("dbo.Sets");
-            DropTable("dbo.CardForeignNames");
             DropTable("dbo.ForeignNames");
             DropTable("dbo.Types");
             DropTable("dbo.CardTypes");

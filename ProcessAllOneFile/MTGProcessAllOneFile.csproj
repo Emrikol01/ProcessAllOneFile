@@ -58,12 +58,13 @@
   <ItemGroup>
     <Compile Include="CardInfo.cs" />
     <Compile Include="JSONMTGClasses.cs" />
-    <Compile Include="Migrations\201708061850265_Initial.cs" />
-    <Compile Include="Migrations\201708061850265_Initial.Designer.cs">
-      <DependentUpon>201708061850265_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201708121745503_Initial.cs" />
+    <Compile Include="Migrations\201708121745503_Initial.Designer.cs">
+      <DependentUpon>201708121745503_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MTGDBContext.cs" />
+    <Compile Include="MTGDBDataFactory.cs" />
     <Compile Include="ProcessBigMTGJSON.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -77,8 +78,8 @@
     <Content Include="set_info.txt" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201708061850265_Initial.resx">
-      <DependentUpon>201708061850265_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201708121745503_Initial.resx">
+      <DependentUpon>201708121745503_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
